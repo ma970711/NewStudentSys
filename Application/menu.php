@@ -68,6 +68,8 @@
         </div>
         <p class="weui-grid__label">在线缴费</p>
     </a>
+    <?  if ($result['is_pay']== 1){
+        echo '
     <a href="applyCard.php?s_admission=<?echo $s_admission?>" class="weui-grid" data-id="applyCard">
         <div class="weui-grid__icon">
             <img src="images/icon_nav_button.png" alt="">
@@ -85,7 +87,8 @@
             <img src="images/icon_nav_msg.png" alt="">
         </div>
         <p class="weui-grid__label">选购军训服装</p>
-    </a>
+    </a>';
+    }?>
     <a href="javascript:" class="weui-grid open-popup" data-target="#full2">
         <div class="weui-grid__icon">
             <img src="images/icon_nav_city.png" alt="">
