@@ -77,18 +77,17 @@ ob_start(); //打开缓冲区
         $arr->execute();
         $result = $arr->fetch(PDO::FETCH_ASSOC);
         if($result['s_password'] == $pass && !empty($pass)){
-                header('Location:menu.php?s_admission='.$s_admission);
+            if($result['is_ok']==1) {
+                header('Location:menu.php?s_admission=' . $s_admission);
+            }else{
+                echo "<script>";
+                echo "alert('账号未审核');";
+                echo "</script>";
+            }
         }else{
             echo '
             <script>
-            
-                $(document).on(\'click\', \'#loginSub\', function() {
-                    $.toast("账号密码出错！", "forbidden",function() {
-                        console.log(\'close\');
-                    });
-                    location.replace(location.href);
-                })
-               
+                alert("账号或密码错误");              
             </script>
         ';
         }

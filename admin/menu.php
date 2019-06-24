@@ -48,6 +48,12 @@ if($a_account==null){
         </div>
         <p class="weui-grid__label">志愿者信息录入</p>
     </a>
+    <a href="audit.php?a_account=<?echo $a_account?>" class="weui-grid" >
+        <div class="weui-grid__icon">
+            <img src="images/icon_nav_panel.png" alt="">
+        </div>
+        <p class="weui-grid__label">学生信息审核</p>
+    </a>
 <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.js"></script>
 <script>
