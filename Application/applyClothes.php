@@ -47,7 +47,7 @@ $result = $arr->fetch(PDO::FETCH_ASSOC);
         <div class="weui-cell">
             <div class="weui-cell__hd"><label for="name" class="weui-label">码数</label></div>
             <div class="weui-cell__bd">
-                <input class="weui-input" id="size" name="size" type="text" value="" readonly="readonly"/>
+                <input class="weui-input" id="size" name="size" type="text"  readonly="readonly" required="required"/>
             </div>          
         </div>
         <div class="weui-cell">
@@ -55,7 +55,8 @@ $result = $arr->fetch(PDO::FETCH_ASSOC);
         </div>
         ';
             echo '<button class="weui-btn weui-btn_primary" name="apply" type="submit" style="text-align: center">确认选购</button>';
-            if (isset($_POST['apply'])){
+            if (!empty($_POST['size'])){
+
                 $stmt=$db->prepare("UPDATE s_info SET is_clothes=1,s_cloSize='{$_POST['size']}' WHERE s_admission =".$s_admission);
                 $stmt->execute();
                 if($stmt->rowCount()>0){
@@ -65,6 +66,13 @@ $result = $arr->fetch(PDO::FETCH_ASSOC);
                     echo '</script>';
                 }else{
                     echo '<script>alert(\'购买失败！\')</script> ';
+                }
+            }
+            else{
+                if (isset($_POST['apply'])) {
+                    if (empty($_POST['size'])) {
+                        echo '<script>alert(\'码数不能为空！\')</script> ';
+                    }
                 }
             }
         }else{

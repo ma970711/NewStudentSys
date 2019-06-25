@@ -37,6 +37,7 @@ $arr->execute();
                 <?
             }
         }
+        echo '<a href="javascript:;" id="back" class="weui-btn weui-btn_primary">返回</a>';
 
     ?>
 </div>
