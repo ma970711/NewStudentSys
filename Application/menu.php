@@ -70,19 +70,19 @@
     </a>
     <?  if ($result['is_pay']== 1){
         echo '
-    <a href="applyCard.php?s_admission=<?echo $s_admission?>" class="weui-grid" data-id="applyCard">
+    <a href="applyCard.php?s_admission='.$s_admission.'" class="weui-grid" data-id="applyCard">
         <div class="weui-grid__icon">
             <img src="images/icon_nav_button.png" alt="">
         </div>
         <p class="weui-grid__label">办理一卡通</p>
     </a>
-    <a href="applyDor.php?s_admission=<?echo $s_admission?>" class="weui-grid" data-id="applyDon">
+    <a href="applyDor.php?s_admission='.$s_admission.'" class="weui-grid" data-id="applyDon">
         <div class="weui-grid__icon">
             <img src="images/icon_nav_picker.png" alt="">
         </div>
         <p class="weui-grid__label">宿舍申请</p>
     </a>
-    <a href="applyClothes.php?s_admission=<?echo $s_admission?>" class="weui-grid" data-id="buyClo">
+    <a href="applyClothes.php?s_admission='.$s_admission.'" class="weui-grid" data-id="buyClo">
         <div class="weui-grid__icon">
             <img src="images/icon_nav_msg.png" alt="">
         </div>
